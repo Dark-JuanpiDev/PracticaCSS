@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#90d4c5">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#ffd600">
+    <title>Practicas CSS</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/dark.css" media="(prefers-color-scheme: dark)">
+    <link rel="stylesheet" href="/light.css" media="(prefers-color-scheme: light)">
+    <script>
+        // If `prefers-color-scheme` is not supported, fall back to light mode.
+        // In this case, light.css will be downloaded with `highest` priority.
+        if (window.matchMedia('(prefers-color-scheme: dark)').media === 'not all') {
+          document.documentElement.style.display = 'none';
+          document.head.insertAdjacentHTML(
+            'beforeend',
+            '<link rel="stylesheet" href="/light.css" onload="document.documentElement.style.display = \'\'">',
+          );
+        }
+    </script>
+    <style>
+        body{
+    padding:0; 
+    border: 0; 
+    margin:0; 
+    width: 100%; 
+    height: 100vh; 
+    background-image: url("816294.png"); 
+    color: white; 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+p{
+    margin: 7px;
+    color: rgba(255, 255, 255, 0.673)
+}
+
+h2, h3, h1{
+    font-family: Fira Sans;
+    color: rgb(255, 255, 255);
+}
+
+.background{
+    position: fixed;
+    width: 100%;
+
+}
+
+h1{
+    font-family: sans-serif;
+    font-weight: lighter;
+    text-align: center;
+}
+
+.div1{
+    font-family: Open Sans;
+    text-align: center;
+    padding-top: 50px;
+}
+
+    .div1 .image{
+        border-radius: 100%;
+        width: 10em;
+        box-shadow: 0 8px 32px 0 rgb(246, 246, 255);
+        border: 5px solid rgb(255, 255, 255);
+        position: relative;
+    }
+
+        .div1 p{
+            font-size: 18px;
+        }
+
+.prop{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    margin: 30px;
+    padding-top: 50px ;
+}
+
+.ffamily h2{
+    /*Este font-family es cuando importamos desde el mismo programa de desarrollo*/
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+}        
+
+    .ffamily p{
+        /*Este font-family es cuando importamos algo de fuentes externas*/
+        font-family: inconsolata;
+    }
+
+.fsize h2{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+}
+
+    .fsize p{
+        /*Cambias el tamaño de la letra*/
+        font-size: 20px;
+    }
+
+.fstyle h2{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+}    
+
+    .p1{
+        font-style: italic;
+    }
+
+        .p2{
+            font-style: oblique;
+        }
+
+.fweight h2{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+}
+
+    .fweight p{
+        font-weight: bolder;
+    }
+
+.fvariant h2{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+}
+
+    .fvariant .p3{
+        font-variant: small-caps;
+    }
+
+    .fvariant .p4{
+        /* Es como el valor "normal" */
+        font-variant: inherit;
+    }
+
+.color h2{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+}
+
+    .color p{
+        color: red;
+    }
+
+.talign h2{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+}
+
+    .talign .p5{
+        text-align: center;
+    }
+
+    .talign .p6{
+        text-align: justify;
+    }
+
+.valign h2{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+}
+
+    .valign table{
+        border: rgb(0, 0, 0);
+        height: 150px;  
+    }
+
+        td.top{
+            vertical-align: top;
+            padding: 20px;
+            letter-spacing: 3px;
+        }
+
+        td.middle{
+            vertical-align: middle;
+            padding: 20px;
+            letter-spacing: 3px;
+        }
+
+        td.bottom{
+            vertical-align: bottom;
+            padding: 20px;
+            letter-spacing: 3px;
+        }
+
+    .baseline{
+        vertical-align: baseline;
+    }
+
+    .sub{
+        vertical-align: sub;
+    }
+
+    .super{
+        vertical-align: super;
+    }
+
+    .pixel{
+        vertical-align: -40px;
+    }
+
+    .main{
+        height: 100px;
+        width: 300px;
+        background-color: lightskyblue;
+        display: inline-table;
+        border-radius: 10px;
+    }
+
+        .paragraph{
+            text-align: center;
+            vertical-align: middle;
+            display: table-cell;
+        }
+
+.tdecoration h2{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+}
+
+    .tdecoration .a{
+        text-decoration: none;
+    }
+
+    .tdecoration .a2{
+        text-decoration: underline;
+    }
+
+    .tdecoration .a3{
+        text-decoration: overline;
+    }
+
+    .tdecoration .a4{
+        text-decoration: line-through;
+    }
+
+    .tdecoration b{
+        color: red;
+    }
+
+.tindent h2{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+}
+
+    .tindent p{
+        text-indent: 60px;
+    }
+
+.tshadow h2{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+}
+
+    .tshadow p{
+        color: blue;
+        font-size: 30px;
+        text-shadow: 5px 2px 4px gray;
+    }
+
+.ttransform h2{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+}
+
+    .p7{
+        text-transform: capitalize;
+    }
+
+    .p8{
+        text-transform: uppercase;
+    }
+
+    .p9{
+        text-transform: lowercase;
+    }
+
+.lspacing h2{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+}
+
+    .p10{
+        letter-spacing: 3px;
+    }
+
+    .p11{
+        letter-spacing: -1.5px;
+    }
+
+.wspace h2{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+}
+
+    .p13{
+        white-space: pre-wrap;
+    }
+
+.wspacing h2{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+}
+
+    .wspacing p{
+        word-spacing: 16px;
+    }
+
+.xd1{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+}
+    .xd1 p{
+        font-size: 13px;
+    }
+
+    .p-red{
+        color: red;
+        font-weight: bolder;
+    }
+
+        .p-red xd{
+            word-spacing: 15px;
+        }
+
+        .p-red xd2{
+            word-spacing: 15px;
+        }
+
+.xd2 h2{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+}
+
+    .blur{
+        z-index: 3;
+        background: rgba(255, 255, 255, 0.527);
+        box-shadow: 0 8px 32px 0 rgba(249, 249, 249, 0.5),
+                    0 8px 32px 0 rgba(249, 249, 249, 0.5);
+        backdrop-filter: blur( 20px );
+        -webkit-backdrop-filter: blur( 20px );
+        border-radius: 10px;
+        border: 1px solid rgba( 255, 255, 255, 0.18 );
+        padding-left: 20px;
+        padding-right: 20px;
+        margin: 0 auto;
+        width: 300px;
+        height: 100px;
+        display: inline-table;
+    }    
+
+    .xd2 p{
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+    }
+
+
+
+    </style>
+</head>
+<body>
+    <!--Titulo-->
+    <h1>
+        Aprendiendo en CSS
+    </h1>
+    <!--Cuerpo-->
+    <div class="div1">
+        <img src="descarga.png" alt="Clic para ver a Lana Rhoades :v" class="image">
+        <h3>Usuario:</h3>
+        <p>Juan Piero Aarón Sanandres Vela</p>
+    </div>
+    <!--Enseñanzas: propiedades para texto-->
+    <h2 class="prop">PROPIEDADES PARA TEXTO</h2>
+    <div class="ffamily">
+        <h2>1) Propiedad Font-family:</h2>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque voluptas, illum delectus commodi numquam, ratione magnam nulla neque assumenda, praesentium ea ipsum blanditiis molestiae. Praesentium laboriosam temporibus rerum reprehenderit illo.</p>
+    </div>
+    <div class="fsize">
+        <h2>2) Propiedad Font-size:</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, atque facere! Libero, officiis reiciendis sunt delectus voluptate dolorem? Natus commodi, beatae dolorum alias possimus laboriosam officiis id fugit similique et.</p>
+    </div>
+    <div class="fstyle">
+        <h2>3) Propiedad Font-style:</h2>
+        <p class="p1">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio quas quae, architecto natus quisquam at? Repellendus animi sit, facilis dicta, nam non aut nulla itaque consequuntur ad eaque nesciunt excepturi?</p>
+        <p class="p2">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam cum ipsa excepturi molestiae, expedita corrupti deleniti soluta vitae pariatur officiis qui facere totam magni aut modi. Asperiores dolorum aspernatur veritatis?</p>
+    </div>
+    <div class="fweight">
+        <h2>4) Propiedad Font-weight:</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet sequi blanditiis aspernatur, qui ratione iste voluptatum laborum commodi accusantium aliquid asperiores neque ducimus vel officiis voluptates rerum modi nostrum illum.</p>
+    </div>
+    <div class="fvariant">
+        <h2>5) Propiedad Font-variant:</h2>
+        <p class="p3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, eius excepturi. Iure asperiores numquam eos corrupti incidunt rem, excepturi culpa laboriosam repudiandae, illo minus ipsum animi officia sed alias vitae.</p>
+        <p class="p4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero fugit facilis voluptatum impedit tempore recusandae mollitia ex enim quis? A minima magnam error provident vel similique quisquam. Illo, cumque dolor?</p>
+    </div>
+    <div class="color">
+        <h2>6) Propiedad color:</h2>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos eius nisi vel magnam quas quaerat placeat mollitia, cumque unde, possimus sint exercitationem architecto harum. In ex iste rerum sit quas.</p>
+    </div>
+    <div class="talign">
+        <h2>7) Propiedad text-align:</h2>
+        <p class="p5">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore, ea. Totam nisi inventore quia magni voluptatum eius ipsa, accusantium quis. Dolorem voluptate ducimus rerum! Possimus explicabo quia ducimus ex officia?</p>
+        <p class="p6">Lorem ipsum, dolor sit amet consectetur adipisicing elit. At nihil odit natus autem aspernatur voluptate aut cumque libero commodi deleniti itaque, dolorum reiciendis et mollitia rem tenetur assumenda debitis quaerat.</p>
+    </div>
+    <div class="valign">
+        <h2>8) Propiedad vertical-align:</h2>
+        <p>Primer metodo:</p>
+        <table border="1" cellspacing="0">
+            <tr>
+                <td class="top">Juanpi</td>
+                <td class="middle">UTP</td>
+                <td class="bottom">inferior</td>
+            </tr>
+        </table>
+        <p>Segundo metodo:</p>
+        <div>
+            <p>Ejemplo de linea de base o <span class="baseline">baseline</span>, o una texto con <span class="sub">sub linea</span>, o tambien con <span class="super">superlinea</span> y con <span class="pixel">pixeles</span></p>
+        </div>
+        <p>Tercer metodo:</p>
+        <div class="main">
+            <div class="paragraph">Este texto esta alineado al medio</div>
+        </div>
+    </div>
+    <div class="tdecoration">
+        <h2>9) Propiedad Text-decoration:</h2>
+        <a href="#" class="a"><b>clikea aqui</b></a><br>
+        <a href="#" class="a2"><b>clikea aqui 2</b></a><br>
+        <p>xd</p>
+        <a href="#" class="a3"><b>clikea aqui 3</b></a><br>
+        <a href="#" class="a4"><b>clickea aqui 4</b></a>clar
+    </div>
+    <div class="tindent">
+        <h2>10) Propiedad Text-indent:</h2>
+        <p>Este es un ejemplo de sangria y de todas las cosas xdxd <strong>xdxdxd strong</strong> Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, dolore similique ipsam deleniti blanditiis sequi, recusandae facilis atque, fugit reprehenderit quisquam laboriosam. Fuga expedita illum architecto libero rem fugiat iste!</p>
+    </div>
+    <div class="tshadow">
+        <h2>11) Propiedad Text-shadow:</h2>
+        <p>Juanpi esta Aprendiendo</p>
+    </div>
+    <div class="ttransform">
+        <h2>12) Propiedad text-transform:</h2>
+        <p class="p7">Lorem ipsum dolor sit, amet consectetur adipisicing elit. At neque quas ipsam aspernatur numquam, facilis eum tenetur recusandae doloremque veritatis sunt aut laudantium iure nam molestiae ipsum odio laborum esse.</p>
+        <p class="p8">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad possimus vitae eius illum libero voluptatem, pariatur eaque consectetur? Tenetur voluptatum nihil optio a, maxime maiores sapiente quidem consequatur est aut!</p>
+        <p class="p9">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto dolore numquam nisi consequuntur, minus, voluptatibus commodi dolorum velit dolor ut ullam dignissimos quasi impedit magni veritatis earum ipsum soluta vitae.</p>
+    </div>
+    <div class="lspacing">
+        <h2>13) Propiedad letter-spacing:</h2>
+        <p class="p10">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed ea fuga iste culpa non sunt dolorem, libero ipsa adipisci laudantium provident sit facilis ut repellendus quidem vitae, hic voluptatem architecto.</p>
+        <p class="p11">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis qui, repudiandae a, tenetur provident est itaque id blanditiis, quas repellat totam maiores ipsum voluptatem repellendus dicta error consectetur deserunt temporibus?</p>
+    </div>
+    <div class="wspace">
+        <h2>14) Propiedad White-space:</h2>
+        <p class="p12">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore consequuntur officia, nesciunt praesentium fugit, aperiam quod, accusantium consequatur cupiditate eius earum repellendus. Sit doloribus dolore exercitationem explicabo dolorum qui unde!</p>
+        <p class="p13">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae porro nulla, rerum officia in minima corrupti iusto, velit alias nesciunt blanditiis ex, recusandae sed distinctio magni facilis magnam a atque!</p>
+    </div>
+    <div class="wspacing">
+        <h2>15) Propiedad word-spacing:</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad libero quidem temporibus officiis totam error minima inventore fugit dicta sed. Asperiores quidem consectetur autem itaque quo eos officia, quia ipsam!</p>
+    </div>
+    <!--Enseñanzas: propiedades en general-->
+    <h2 class="prop">PROPIEDADES GENERALES</h2>
+    <div class="xd1">
+        <h2>1) Modelo de caja o box en CSS:</h2>
+        <p>Todos los elementos de HTML se pueden considerar como cajas. Este modelo de cjaa representa al diseño y la disposiciond e sitio.</p>
+        <p class="p-red">Este se establece asi: <xd>15px  5px  8px  2px</xd> ==== <xd2>arriba  derecha  abajo  izquierda</xd2></p>
+    </div>
+    <div class="xd2">
+        <h2>2) Ancho total de un elemento:</h2>
+        <div class="blur">
+            <p>El ancho total de un elemento es de <strong>"254px"</strong>. Este se suma con los rellenos, margenes, paddings y bordes</p>
+        </div>
+</body>
+</html>
